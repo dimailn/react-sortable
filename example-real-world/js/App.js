@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import SortableListItem from './SortableListItem';
 import SortableGridItem from './SortableGridItem';
-import StateView from '../StateView';
+import StateView from './StateView';
 
 var App = React.createClass({
 
@@ -37,8 +37,7 @@ var App = React.createClass({
               items={this.state.items}
               draggingIndex={this.state.draggingIndex}
               sortId={i}
-              outline="list"
-              item={item}/>
+              outline="list">{item}</SortableListItem>
       );
     }, this);
 
@@ -49,12 +48,10 @@ var App = React.createClass({
                             items={this.state.items}
                             draggingIndex={this.state.draggingIndex}
                             sortId={i}
-                            item={item}
-                            outline="column"
-                            style={{background: item}}/>
+                            outline="grid">{item}</SortableGridItem>
       );
     }, this);
-    
+
     return (
         <div id="app">
           <div className="list">{listItems}</div>

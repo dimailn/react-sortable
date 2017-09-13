@@ -98,7 +98,6 @@ return class Sortable extends React.Component {
           onDragOver={this.dragOver}
           onDragStart={this.sortStart}
           onDragEnd={this.sortEnd}
-          onDrop={this.sortEnd}
           onTouchStart={this.sortStart}
           onTouchMove={this.dragOver}
           onTouchEnd={this.sortEnd}

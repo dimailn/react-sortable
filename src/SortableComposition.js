@@ -24,6 +24,7 @@ return class Sortable extends React.Component {
       this.props.updateState({
         draggingIndex: null
       });
+      this.props.sortEnd && this.props.sortEnd()
     }
 
     sortStart = (e) => {
@@ -117,7 +118,7 @@ return class Sortable extends React.Component {
       outline: PropTypes.string.isRequired, // list | grid
       draggingIndex: PropTypes.number,
       childProps: PropTypes.object,
-
+      sortEnd: PropTypes.func
   };
 
   Sortable.defaultProps = {
